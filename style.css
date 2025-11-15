@@ -1,0 +1,153 @@
+
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #0099cc, #003366);
+  overflow: hidden;
+  background-size: cover;           
+  background-position: center;      
+  background-repeat: no-repeat;     
+  transition: background-image 1s ease-in-out
+}
+
+.aquarium {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.controls {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      margin: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #356291;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #356291;
+    }
+
+  
+
+.diver1 {
+  position: absolute;
+  left: 40%;
+  bottom: 300px;
+  width: 130px;
+  animation: dive1 3s ease-in-out infinite alternate;
+}
+
+@keyframes dive1 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-180px); }
+}
+
+.diver2 {
+  position: absolute;
+  left: 70%;
+  bottom: 300px;
+  width: 130px;
+  animation: dive1 6s ease-in-out infinite alternate;
+}
+
+@keyframes dive2 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-180px); }
+}
+
+.diver3 {
+  position: absolute;
+  left: 10%;
+  bottom: 300px;
+  width: 130px;
+  animation: dive3 4s ease-in-out infinite alternate;
+}
+
+@keyframes dive3 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-180px); }
+}
+
+.shark {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 250px;
+  animation: swim-shark 20s linear infinite;
+}
+@keyframes swim-shark {
+  0%   { transform: translateX(0) scaleX(1); }
+  49%  { transform: translateX(calc(100vw - 250px)) scaleX(1); }
+  50%  { transform: translateX(calc(100vw - 250px)) scaleX(-1); }
+  99%  { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+.turtle {
+  position: absolute;
+  bottom: 200px;
+  left: 10%;
+  width: 120px;
+  animation: swim-turtle 30s ease-in-out infinite;
+}
+
+@keyframes swim-turtle {
+  0%   { transform: translateX(0) scaleX(1); }
+  49%  { transform: translateX(calc(90vw - 150px)) scaleX(1); }
+  50%  { transform: translateX(calc(90vw - 150px)) scaleX(-1); }
+  99%  { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+.fish {
+  position: absolute;
+  bottom: 250px;
+  left: 0;
+  width: 80px;
+  animation: swim-fish 20s ease-in-out infinite;
+}
+
+@keyframes swim-fish {
+  0%   { transform: translateX(0) scaleX(1); }
+  49%  { transform: translateX(calc(90vw - 150px)) scaleX(1); }
+  50%  { transform: translateX(calc(90vw - 150px)) scaleX(-1); }
+  99%  { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.volume-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  user-select: none;
+}
+
+#volume {
+  width: 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.volume-container:hover #volume {
+  opacity: 1;
+  pointer-events: auto;
+}
